@@ -1,0 +1,60 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div *ngIf="articuloCarro.length > 0">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Detalle</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let articuloCarroTemp of articuloCarro">
+                        <td><img class="articulo-imagen" src="{{ articuloCarroTemp.url}}"></td>
+                        <td>
+                            <p>{{ articuloCarroTemp.nombre}}</p>
+                            <p>{{ articuloCarroTemp.unidadPrecio| currency: 'EUR'}}</p>
+                            <div class="row">
+                                <div class="col">
+                                    <!-- Botón para aumentar la cantidad -->
+                                    <button (click)="subirCantidad(articuloCarroTemp)" class="btn btn-sm" style="background-color: orangered; color: white;">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                
+                                    <!-- Cantidad de artículos -->
+                                    <span style="margin-right: 10px; margin-left: 10px;">{{ articuloCarroTemp.cantidad }}</span>
+                                
+                                    <!-- Botón para reducir la cantidad -->
+                                    <button (click)="bajarCantidad(articuloCarroTemp)" class="btn btn-primary btn-sm" style="background-color: orangered; color: white;"> 
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                </div>
+                                
+                                <div class="col">
+                                    <button (click)="remove(articuloCarroTemp)" class="btn btn-danger">Borrar</button>
+                                    <p>Total: {{ articuloCarroTemp.cantidad * articuloCarroTemp.unidadPrecio | currency: 'EUR' }}</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2">
+                            <p>Cantidad total: {{cantidadTotal}}</p>
+                            <p>Precio total: {{precioTotal | currency: 'EUR'}}</p>
+                        </td>
+                        <td>
+                            <button routerLink="/formulario" class="btn btn-success" style="background-color: orangered; color: white;">Comprar</button>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div *ngIf="articuloCarro.length === 0">
+            <p>El carro está vacío</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+ngb-pagination ::ng-deep ul > li:not(.active) > a {
+    background-color: rgb(255, 255, 255) !important;
+}
+
+ngb-pagination ::ng-deep ul > li.active > a {
+    background-color: orangered !important;
+}
+/* Cambiar el color del borde de los enlaces de página */
+ngb-pagination ::ng-deep ul > li > a {
+    border-color: orange !important; /* Cambia el color del borde */
+  }
+  
+  /* Cambiar el color del borde de los enlaces de página activa */
+  ngb-pagination ::ng-deep ul > li.active > a {
+    border-color: orange !important; /* Cambia el color del borde */
+  }
+  
+  page-link  {
+    color: orangered;
+  }

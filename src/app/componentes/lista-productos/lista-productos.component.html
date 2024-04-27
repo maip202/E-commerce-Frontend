@@ -1,0 +1,41 @@
+<div *ngIf="productos?.length !== 0" class="container-fluid">
+
+
+    <div class="row">
+        <div class="col-md-4 mb-4" *ngFor="let tempProductosGrip of productos">
+            <div class="">
+                <a routerLink="/productos/{{ tempProductosGrip.id}}">
+                    <img class="card-img-top" [src]="tempProductosGrip.url" alt="Card image cap">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title"> <a routerLink="/productos/{{ tempProductosGrip.id}}">
+                        <td class="align-middle" style="color: orangered;">{{ tempProductosGrip.nombre}}</td>
+                    </a></h5>
+                    <p class="card-text"><td class="align-middle">{{ tempProductosGrip.precioUnidad | currency: 'EUR'}}</td></p>
+                    <button (click)="anadirCarro(tempProductosGrip)" type="button" class="btn" style="background-color: orangered; color: white;">Añadir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="footer-pagination">
+        <div class="row">
+            <div class="col-md-12"></div>
+    
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12 text-start mt-5" style="padding-left: 5%;">
+                        <ngb-pagination class="pagination-custom" [(page)]="pagina" [pageSize]="tamanoPagina" [collectionSize]="totalElementos"
+                            (pageChange)="productosLista()">
+                        </ngb-pagination>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+<div *ngIf="productos?.length === 0" class="alert alert-warning col-md-12" role="alert">No hay resultado para la
+    busqueda</div>

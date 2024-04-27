@@ -1,0 +1,34 @@
+.cart-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .cart-button {
+    position: relative;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #fff;
+    color: #555;
+  }
+  
+  .cart-icon {
+    font-size: 24px;
+  }
+  
+  .cart-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cart-price {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .cart-quantity {
+    font-size: 14px;
+  }
+  

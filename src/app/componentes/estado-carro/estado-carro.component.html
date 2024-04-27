@@ -1,0 +1,11 @@
+<div class="cart-container">
+  <button type="button" class="btn btn-light cart-button" routerLink="/detalle-carro">
+    <div class="cart-icon">
+      <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+    </div>
+    <div class="cart-info">
+      <div class="cart-price">{{ precioTotal | currency: 'EUR'}}</div>
+      <div class="cart-quantity">{{ cantidadTotal }}</div>
+    </div>
+  </button>
+</div>

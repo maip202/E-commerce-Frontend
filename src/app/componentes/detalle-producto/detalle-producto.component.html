@@ -1,0 +1,18 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{{ producto.url }}" alt="Imagen del producto" class="img-fluid producto-imagen">
+        </div>
+        <div class="col-md-8">
+            <div class="producto-detalles">
+                <p class="producto-nombre">{{ producto.nombre }}</p>
+                <p class="producto-id"><strong>ID:</strong> {{ producto.id }}</p>
+                <p class="producto-descripcion"><strong>Descripción:</strong> {{ producto.descripcion }}</p>
+                <p class="producto-stock"><strong>Unidades en stock:</strong> {{ producto.unidadesStock }}</p>
+                <button (click)="anadirCarro()" type="button" class="btn btn-anadir" style="background-color: orangered; color: white;">Añadir al carro</button>
+                <a routerLink="/productos" class="btn btn-secondary btn-volver">Volver</a>
+            </div>
+        </div>
+    </div>
+</div>
